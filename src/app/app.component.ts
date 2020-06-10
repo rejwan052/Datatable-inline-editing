@@ -11,6 +11,7 @@ export class AppComponent {
 
   editing = {};
   rows = [];
+  updatedValue = [];
 
   ColumnMode = ColumnMode;
 
@@ -36,6 +37,7 @@ export class AppComponent {
     this.editing[rowIndex + '-' + cell] = false;
     this.rows[rowIndex][cell] = event.target.value;
     this.rows = [...this.rows];
+    this.updatedValue = this.rows[rowIndex][cell];
     console.log('UPDATED!', this.rows[rowIndex][cell]);
   }
   
